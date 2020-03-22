@@ -142,7 +142,7 @@ class Board():
                 
         else:
             # this shouldn't happen, it would mean that no strings were read in?
-            raise ValueError("couldn't work with hex:\n{}".format(repr(hex[0])))
+            raise ValueError("couldn't work with hex:\n{}".format(repr(self.hex_grids[0])))
             
         return self.display_grid
     
@@ -162,9 +162,9 @@ class Board():
         buffer = ""
         for i in range(len(self.leds)):
             if self.leds[i] == '1':
-                buffer += "### ".format(i)
+                buffer += "### "
             else:
-                buffer += "... ".format(i)
+                buffer += "... "
         out += ('\n' + buffer) * 3
         return out
         
